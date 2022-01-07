@@ -33,8 +33,6 @@ footer {
 nav ul,
 footer ul {
   list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 nav li,
@@ -67,11 +65,9 @@ header {
 }
 
 nav {
-  position: absolute;
-  top: 40px;
-  right: 15%;
-  left: 45%;
-  width: 55%;
+  z-index: 1;
+  right: 0px;
+  display: flex;
 }
 
 .current {
@@ -102,7 +98,8 @@ footer {
 }
 
 footer ul {
-  width: 50%;
+  display: flex;
+  justify-content: space-around;
 }
 
 /******************** LINKS ********************/
@@ -154,6 +151,10 @@ footer a:hover {
 /******************** MOBILE MEDIA ********************/
 
 @media only screen and (max-width: 749px) {
+  .logo {
+    margin-left: 150px;
+  }
+
   .logo img {
     height: 40%;
   }
@@ -162,11 +163,40 @@ footer a:hover {
     font-size: 1.5rem;
     margin: 60px auto auto 100px;
   }
+
+  .hamburger-menu--checkbox {
+    position: fixed;
+    width: 35px;
+    top: 60px;
+    width: 35px;
+    left: 30px;
+  }
+
+  #hamburger-menu {
+    display: none;
+  }
+
+  #hamburger-menu:checked ~ nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  nav {
+    display: none;
+    width: 200px;
+    margin-top: 140px;
+    background: var(--mantis);
+  }
 }
 
 /******************** TABLET MEDIA ********************/
 
 @media only screen and (max-width: 1099px) {
+  .logo {
+    margin-left: 150px;
+  }
+
   .logo img {
     height: 50%;
   }
@@ -174,6 +204,31 @@ footer a:hover {
   .logo-txt {
     font-size: 1.7rem;
     margin: 60px auto auto 120px;
+  }
+
+  .hamburger-menu--checkbox {
+    position: fixed;
+    width: 35px;
+    top: 60px;
+    width: 35px;
+    left: 30px;
+  }
+
+  #hamburger-menu {
+    display: none;
+  }
+
+  #hamburger-menu:checked ~ nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  nav {
+    display: none;
+    width: 200px;
+    margin-top: 140px;
+    background: var(--mantis);
   }
 }
 
@@ -187,5 +242,26 @@ footer a:hover {
   .logo-txt {
     font-size: 2rem;
     margin: 60px auto auto 140px;
+  }
+
+  .hamburger-menu--checkbox {
+    display: none;
+  }
+
+  #hamburger-menu {
+    display: none;
+  }
+
+  #hamburger-menu:checked ~ nav {
+  }
+
+  nav {
+    position: absolute;
+    top: 40px;
+    right: 15%;
+    left: 45%;
+    width: 55%;
+    display: flex;
+    flex-wrap: wrap;
   }
 }
