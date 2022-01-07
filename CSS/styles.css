@@ -370,6 +370,9 @@ footer a:hover {
   }
 
   #hamburger-menu:checked ~ nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 
   nav {
