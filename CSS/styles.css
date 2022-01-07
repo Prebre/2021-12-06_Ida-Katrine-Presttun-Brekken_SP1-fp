@@ -10,6 +10,10 @@
 ********************/
 
 /******************** FONTS ********************/
+@font-face {
+  font-family: "Fabrik";
+  src: url(../Fonts/fabrik.ttf);
+}
 
 /**************************************** WEBSITE ****************************************/
 /******************** CSS VARIABLES ********************/
@@ -20,6 +24,7 @@
   --sky: #82d2ff;
   --mantis: #82d282;
   --dark-orange: #ff8c00;
+  --fabrik: "Fabrik", Verdana, sans-serif;
 }
 
 /******************** SHARED ATTRIBUTES ********************/
@@ -29,19 +34,48 @@ footer {
   width: 100%;
   left: 0px;
 }
+header,
+nav,
+footer {
+  z-index: 1;
+}
 
 nav ul,
 footer ul {
   list-style-type: none;
+  display: flex;
 }
 
 nav li,
 footer li {
-  padding: 15px;
-  font-size: 1.2rem;
+  padding: 0px 15px 5px 15px;
+}
+
+.exhibition,
+.library,
+.scientific,
+.painting,
+.ants,
+.mammoth {
+  background-position: 50% 50%;
+  filter: grayscale(100%);
+  transition-duration: 500ms;
+  flex-grow: 0;
 }
 
 /******************** GLOBAL ********************/
+
+html {
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(#000075, #0000d0);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  font-family: var(--fabrik);
+}
 
 header {
   background-color: var(--mantis);
@@ -62,12 +96,7 @@ header {
 
 .logo-txt {
   position: absolute;
-}
-
-nav {
-  z-index: 1;
-  right: 0px;
-  display: flex;
+  font-weight: 900;
 }
 
 .current {
@@ -83,17 +112,21 @@ header .current:hover {
   color: var(--sky);
 }
 
+nav li {
+  font-size: 1.2rem;
+}
+
 footer .current:hover {
   color: var(--mantis);
 }
 
 main {
-  background-image: linear-gradient(#000075, #0000d0);
+  margin: 160px 30px -100px 30px;
 }
 
 footer {
   background-color: var(--sky);
-  height: 75px;
+  height: 50px;
   bottom: 0px;
 }
 
@@ -108,7 +141,7 @@ a {
   text-decoration: none;
   color: var(--dark-orange);
   letter-spacing: 0.25rem;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 a:hover {
@@ -130,6 +163,56 @@ footer a:hover {
 
 /******************** INDEX ********************/
 
+.img-tile {
+  height: 300px;
+  width: 300px;
+  border: 2px solid var(--dark-orange);
+  border-radius: 200px;
+  margin-bottom: 20px;
+}
+
+.img-tile:hover {
+  filter: grayscale(0%);
+  transition-duration: 500ms;
+  width: 500px;
+  font-weight: bold;
+}
+
+.info-tile {
+  color: var(--dark-orange);
+  background-color: rgba(0, 0, 117, 0.7);
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-align: center;
+  margin: 20%;
+  padding: 15px;
+  border-radius: 40px;
+}
+
+.exhibition {
+  background-image: url("../images/exhibition-medium.jpg");
+}
+
+.library {
+  background-image: url("../images/library-medium.jpg");
+}
+
+.scientific {
+  background-image: url("../images/scientific-medium.jpg");
+}
+
+.painting {
+  background-image: url("../images/vr-painting_medium.jpg");
+}
+
+.ants {
+  background-image: url("../images/ants-medium.jpg");
+}
+
+.mammoth {
+  background-image: url("../images/mammoth-medium.jpg");
+}
+
 /******************** ABOUT US ********************/
 
 /******************** CONTACT US ********************/
@@ -150,7 +233,7 @@ footer a:hover {
 
 /******************** MOBILE MEDIA ********************/
 
-@media only screen and (max-width: 749px) {
+@media only screen and (max-width: 599px) {
   .logo {
     margin-left: 150px;
   }
@@ -188,11 +271,28 @@ footer a:hover {
     margin-top: 140px;
     background: var(--mantis);
   }
+
+  .information-tiles {
+    display: block;
+  }
+
+  .img-tile {
+    height: 250px;
+    width: 250px;
+  }
+
+  .img-tile:hover {
+    width: 300px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
 }
 
 /******************** TABLET MEDIA ********************/
 
-@media only screen and (max-width: 1099px) {
+@media only screen and (min-width: 600px) {
   .logo {
     margin-left: 150px;
   }
@@ -230,11 +330,28 @@ footer a:hover {
     margin-top: 140px;
     background: var(--mantis);
   }
+
+  .information-tiles {
+    display: block;
+  }
+
+  .img-tile {
+    height: 300px;
+    width: 300px;
+  }
+
+  .img-tile:hover {
+    width: 400px;
+  }
+
+  footer {
+    font-size: 1.1rem;
+  }
 }
 
 /******************** PC MEDIA ********************/
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1200px) {
   .logo img {
     height: 60%;
   }
@@ -257,11 +374,33 @@ footer a:hover {
 
   nav {
     position: absolute;
-    top: 40px;
+    top: -100px;
     right: 15%;
     left: 45%;
     width: 55%;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .information-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-direction: row;
+  }
+
+  .img-tile {
+    height: 350px;
+    width: 350px;
+  }
+
+  .img-tile:hover {
+    width: 500px;
+  }
+
+  footer {
+    font-size: 1.2rem;
   }
 }
