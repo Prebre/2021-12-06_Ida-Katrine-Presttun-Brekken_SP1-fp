@@ -30,9 +30,8 @@
 /******************** SHARED ATTRIBUTES ********************/
 header,
 footer {
-  position: fixed;
-  width: 100%;
   left: 0px;
+  right: 0px;
 }
 header,
 nav,
@@ -45,12 +44,14 @@ footer ul {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+
+  margin: 0px -10px;
 }
 
 nav li,
 footer li {
-  padding: 0px 15px 5px 15px;
+  padding: 10px;
 }
 
 .exhibition,
@@ -80,8 +81,9 @@ body {
 }
 
 header {
+  position: fixed;
   background-color: var(--mantis);
-  height: 150px;
+  height: 200px;
   top: 0px;
 }
 
@@ -93,7 +95,7 @@ header {
 .logo img {
   position: absolute;
   height: 60%;
-  margin: 30px;
+  margin: 10px;
 }
 
 .logo-txt {
@@ -102,20 +104,15 @@ header {
 }
 
 .current {
-  border: 2px solid var(--med-blue);
-  border-radius: 100px;
-  background-image: linear-gradient(#000075, #0000d0);
   color: var(--dark-orange);
-  padding: 10px 15px;
   text-transform: uppercase;
+  border-bottom: 3px double var(--med-blue);
+  padding: 0px 5px;
+  text-shadow: 2px 1px var(--navy);
 }
 
 header .current:hover {
   color: var(--sky);
-}
-
-nav li {
-  font-size: 1.2rem;
 }
 
 footer .current:hover {
@@ -127,14 +124,18 @@ main {
 }
 
 footer {
+  position: static;
   background-color: var(--sky);
-  height: 50px;
-  bottom: 0px;
+  text-align: center;
+  padding: 20px 20px 10px 20px;
+  border-radius: 50px 50px 0px 0px;
+  opacity: 0.8;
 }
 
 footer ul {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 /******************** LINKS ********************/
@@ -237,7 +238,7 @@ footer a:hover {
 
 @media only screen and (max-width: 599px) {
   .logo {
-    margin-left: 150px;
+    margin-left: 50px;
   }
 
   .logo img {
@@ -246,32 +247,12 @@ footer a:hover {
 
   .logo-txt {
     font-size: 1.5rem;
-    margin: 60px auto auto 100px;
-  }
-
-  .hamburger-menu--checkbox {
-    position: fixed;
-    width: 35px;
-    top: 60px;
-    width: 35px;
-    left: 30px;
-  }
-
-  #hamburger-menu {
-    display: none;
-  }
-
-  #hamburger-menu:checked ~ nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    margin: 45px auto auto 100px;
   }
 
   nav {
-    display: none;
-    width: 200px;
-    margin-top: 140px;
-    background: var(--mantis);
+    margin-top: 120px;
+    font-size: 0.9rem;
   }
 
   .information-tiles {
@@ -296,7 +277,7 @@ footer a:hover {
 
 @media only screen and (min-width: 600px) {
   .logo {
-    margin-left: 150px;
+    margin-left: 100px;
   }
 
   .logo img {
@@ -305,32 +286,12 @@ footer a:hover {
 
   .logo-txt {
     font-size: 1.7rem;
-    margin: 60px auto auto 120px;
-  }
-
-  .hamburger-menu--checkbox {
-    position: fixed;
-    width: 35px;
-    top: 60px;
-    width: 35px;
-    left: 30px;
-  }
-
-  #hamburger-menu {
-    display: none;
-  }
-
-  #hamburger-menu:checked ~ nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    margin: 50px auto auto 120px;
   }
 
   nav {
-    display: none;
-    width: 200px;
-    margin-top: 140px;
-    background: var(--mantis);
+    margin-top: 130px;
+    font-size: 1rem;
   }
 
   .information-tiles {
@@ -363,27 +324,9 @@ footer a:hover {
     margin: 60px auto auto 140px;
   }
 
-  .hamburger-menu--checkbox {
-    display: none;
-  }
-
-  #hamburger-menu {
-    display: none;
-  }
-
-  #hamburger-menu:checked ~ nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-
   nav {
-    position: absolute;
-    top: -100px;
-    right: 15%;
-    left: 45%;
-    width: 55%;
-    flex-direction: row;
+    margin-top: 150px;
+    font-size: 1.2rem;
   }
 
   .information-tiles {
