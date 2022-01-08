@@ -247,12 +247,13 @@ footer a:hover {
 
   .logo-txt {
     font-size: 1.5rem;
-    margin: 45px auto auto 100px;
+    margin: 30px auto auto 100px;
   }
 
   nav {
     margin-top: 120px;
     font-size: 0.9rem;
+    margin-left: -20px;
   }
 
   .information-tiles {
@@ -292,6 +293,7 @@ footer a:hover {
   nav {
     margin-top: 130px;
     font-size: 1rem;
+    margin-left: -20px;
   }
 
   .information-tiles {
