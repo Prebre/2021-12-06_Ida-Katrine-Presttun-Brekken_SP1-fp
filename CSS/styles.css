@@ -85,6 +85,7 @@ header {
   background-color: var(--mantis);
   height: 200px;
   top: 0px;
+  border-bottom: 5px double var(--navy);
 }
 
 .logo {
@@ -120,7 +121,20 @@ footer .current:hover {
 }
 
 main {
-  margin: 220px 30px 100px 30px;
+  margin: 220px 5% 20px 5%;
+  font-size: 1.5rem;
+  min-height: 100%;
+}
+
+.copy {
+  background-color: #bdbdbd;
+  color: var(--navy);
+  padding: 50px 10%;
+  margin: 0px 5%;
+  border-radius: 50px;
+}
+.copy ul {
+  list-style-type: none;
 }
 
 footer {
@@ -252,12 +266,13 @@ footer a:hover {
 
   nav {
     margin-top: 120px;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     margin-left: -20px;
   }
 
   .information-tiles {
     display: block;
+    margin: 0px 15%;
   }
 
   .img-tile {
@@ -292,12 +307,13 @@ footer a:hover {
 
   nav {
     margin-top: 130px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-left: -20px;
   }
 
   .information-tiles {
     display: block;
+    margin: 0px 10%;
   }
 
   .img-tile {
