@@ -45,7 +45,6 @@ footer ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
   margin: 0px -10px;
 }
 
@@ -139,6 +138,9 @@ main {
 
 footer {
   position: static;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   background-color: var(--sky);
   text-align: center;
   padding: 20px 20px 10px 20px;
