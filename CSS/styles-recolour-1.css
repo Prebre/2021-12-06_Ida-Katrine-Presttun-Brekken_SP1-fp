@@ -19,11 +19,11 @@
 /******************** CSS VARIABLES ********************/
 
 .variables {
-  --navy: #000075;
-  --med-blue: #0000d0;
-  --sky: #82d2ff;
-  --mantis: #82d282;
-  --dark-orange: #ff8c00;
+  --navy: #060606;
+  --med-blue: #0f393b;
+  --sky: #403e2d;
+  --mantis: #294123;
+  --dark-orange: #f7b22c;
   --fabrik: "Fabrik", Verdana, sans-serif;
 }
 
@@ -74,7 +74,7 @@ html {
 }
 
 body {
-  background-image: linear-gradient(#000075, #0000d0);
+  background-image: linear-gradient(#060606, #0f393b);
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 90%;
@@ -108,9 +108,8 @@ header {
 .current {
   color: var(--dark-orange);
   text-transform: uppercase;
-  border-bottom: 3px double var(--med-blue);
+  border-bottom: 3px double var(--navy);
   padding: 0px 5px;
-  text-shadow: 2px 1px var(--navy);
 }
 
 header .current:hover {
@@ -198,6 +197,7 @@ a {
   color: var(--dark-orange);
   letter-spacing: 0.25rem;
   font-weight: 600;
+  text-shadow: 2px 1px var(--navy);
 }
 
 a:hover {
@@ -207,17 +207,16 @@ a:hover {
 
 .copy a {
   border-bottom: 2px solid var(--navy);
-  text-shadow: 2px 1px var(--navy);
 }
 
-header a,
+/*header a,
 footer a {
   color: var(--navy);
-}
+}*/
 
 header a:hover,
 footer a:hover {
-  color: var(--med-blue);
+  color: var(--dark-orange);
 }
 
 /******************** FORMS ********************/
