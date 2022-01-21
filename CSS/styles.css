@@ -107,7 +107,6 @@ body {
 
 header {
   position: fixed;
-  height: 180px;
   top: 0px;
   border-bottom: 6px ridge var(--accent);
 }
@@ -119,11 +118,13 @@ header {
 
 .logo img {
   position: absolute;
-  height: 60%;
+  height: 50%;
   margin: 10px;
 }
 
 .logo-txt {
+  font-size: 2.7rem;
+  margin: 25px auto auto 100px;
   position: absolute;
   font-weight: 900;
   font-family: var(--ostrich-bold);
@@ -148,7 +149,51 @@ nav ul {
 }
 
 nav li {
-  padding: 10px;
+  padding: 0px 25px 5px 25px;
+}
+
+#hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+
+#hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background-color: var(--contrast);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  height: calc(100vh - 50px);
+  width: 100%;
 }
 
 footer {
@@ -164,10 +209,8 @@ footer {
   margin: 0px -8px;
 }
 
-footer ul {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+footer p {
+  padding: 0px 8px;
 }
 
 /******************** LINKS ********************/
@@ -203,7 +246,7 @@ footer a:hover {
 /******************** CONTENT ********************/
 
 main {
-  margin: 220px 5% 20px 5%;
+  margin: 150px 5% 20px 5%;
   min-height: 100%;
   line-height: 200%;
 }
@@ -355,24 +398,18 @@ h2 {
 
 /******************** MOBILE MEDIA ********************/
 
-@media only screen and (max-width: 599px) {
-  .logo {
-    margin-left: 30px;
+@media only screen and (max-width: 620px) {
+  header nav {
+    display: none;
   }
 
-  .logo img {
-    height: 30%;
+  header {
+    height: 150px;
   }
 
-  .logo-txt {
-    font-size: 1.6rem;
-    margin: 25px auto auto 80px;
-  }
-
-  nav {
-    margin-top: 70px;
-    font-size: 1.1rem;
-    margin-left: -20px;
+  #hamburger-icon {
+    display: block;
+    margin: 70px 90%;
   }
 
   h1 {
@@ -389,7 +426,8 @@ h2 {
 
   .information-tiles {
     display: block;
-    margin: 0px 15%;
+    margin: 20px 15%;
+    padding: 70px 10px;
   }
 
   .img-tile {
@@ -418,24 +456,18 @@ h2 {
 
 /******************** TABLET MEDIA ********************/
 
-@media only screen and (min-width: 600px) {
-  .logo {
-    margin-left: 100px;
+@media only screen and (min-width: 620px) {
+  header {
+    height: 150px;
   }
 
-  .logo img {
-    height: 40%;
-  }
-
-  .logo-txt {
-    font-size: 2rem;
-    margin: 35px auto auto 100px;
-  }
-
-  nav {
-    margin-top: 85px;
-    font-size: 1.2rem;
-    margin-left: -20px;
+  header nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 100px;
+    font-size: 1.1rem;
   }
 
   h1 {
@@ -452,7 +484,8 @@ h2 {
 
   .information-tiles {
     display: block;
-    margin: 0px 10%;
+    margin: 20px 10%;
+    padding: 50px 10px;
   }
 
   .img-tile {
@@ -481,18 +514,17 @@ h2 {
 
 /******************** PC MEDIA ********************/
 
-@media only screen and (min-width: 1200px) {
-  .logo img {
-    height: 50%;
+@media only screen and (min-width: 1020px) {
+  header {
+    height: 150px;
   }
 
-  .logo-txt {
-    font-size: 2.7rem;
-    margin: 35px auto auto 120px;
-  }
-
-  nav {
-    margin-top: 130px;
+  header nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 100px;
     font-size: 1.3rem;
   }
 
@@ -514,6 +546,8 @@ h2 {
     justify-content: space-around;
     align-items: stretch;
     flex-direction: row;
+    margin: 20px 10%;
+    padding: 50px 10px;
   }
 
   .img-tile {
