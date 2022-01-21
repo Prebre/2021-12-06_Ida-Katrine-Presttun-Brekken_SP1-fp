@@ -23,8 +23,8 @@
   --contrast: #010101;
   --alternate: #a0a0a0;
   --main: #fff;
-  --accent: #1f81cf;
-  --link: #2b9700;
+  --accent: #1d79c3;
+  --link: #268500;
   --fabrik: "Fabrik", Verdana, sans-serif;
 }
 
@@ -38,20 +38,6 @@ header,
 nav,
 footer {
   z-index: 1;
-}
-
-nav ul,
-footer ul {
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 0px -10px;
-}
-
-nav li,
-footer li {
-  padding: 10px;
 }
 
 .exhibition,
@@ -75,11 +61,10 @@ html {
 }
 
 body {
-  background-image: linear-gradient(#1f81cf, #fff);
+  background-image: linear-gradient(#1d79c3, #fff);
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 90%;
-  font-family: var(--fabrik);
 }
 
 header {
@@ -108,12 +93,24 @@ header {
 .current {
   color: var(--accent);
   text-transform: uppercase;
-  border-bottom: 3px double var(--link);
+  border-bottom: 2px solid var(--link);
   padding: 0px 5px;
 }
 
 .current:hover {
   color: var(--alternate);
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0px -10px;
+}
+
+nav li {
+  padding: 10px;
 }
 
 main {
@@ -138,6 +135,10 @@ h2 {
 
 h3 {
   font-size: 1.6rem;
+}
+
+p {
+  font-family: var(--fabrik);
 }
 
 .copy {
@@ -180,6 +181,7 @@ footer {
   justify-content: space-around;
   background-color: var(--contrast);
   color: var(--alternate);
+  border-top: 6px ridge var(--accent);
   text-align: center;
   padding: 20px 0px 10px 0px;
   margin: 0px -8px;
@@ -198,6 +200,7 @@ a {
   color: var(--link);
   letter-spacing: 0.25rem;
   font-weight: 600;
+  font-family: var(--fabrik);
 }
 
 a:hover {
