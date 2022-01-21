@@ -3,10 +3,9 @@
 /******************** COLOUR PALETTE 
 #010101 - Almost black
 #a0a0a0 - Slight gray
-#cccccc - Almost white
 #ffffff - White
-#1f81cf - Blue
-#2b9700 - Green
+#1d79c3 - Blue
+#268500 - Green
 
 ********************/
 
@@ -21,17 +20,24 @@
   src: url(../Fonts/OstrichSans-Black.otf);
 }
 
+@font-face {
+  font-family: "Ostrich Sans Bold";
+  src: url(../Fonts/OstrichSans-Bold.otf);
+}
+
 /**************************************** WEBSITE ****************************************/
 /******************** CSS VARIABLES ********************/
 
 .variables {
-  --contrast: #010101;
-  --alternate: #a0a0a0;
+  --contrast: #120136;
+  --alternate: #bbded6;
   --main: #fff;
-  --accent: #1d79c3;
-  --link: #268500;
+  --colour: #005792;
+  --accent: #eac100;
+  --link: #0b8457;
   --fabrik: "Fabrik", Verdana, sans-serif;
   --ostrich-black: "Ostrich Sans Black", Verdana, sans-serif;
+  --ostrich-bold: "Ostrich Sans Bold", Verdana, sans-serif;
 }
 
 /******************** SHARED ATTRIBUTES ********************/
@@ -46,12 +52,24 @@ footer {
   z-index: 1;
 }
 
+header,
+.copy {
+  background-color: var(--main);
+}
+
 h1,
 h2,
 h3,
 header,
 footer {
   font-family: var(--ostrich-black);
+}
+
+h1,
+h2,
+h3,
+.current {
+  color: var(--colour);
 }
 
 .copy,
@@ -74,14 +92,14 @@ ul,
   background-size: cover;
 }
 
-/******************** GLOBAL ********************/
+/******************** HEADER & FOOTER ********************/
 
 html {
   height: 100%;
 }
 
 body {
-  background-image: linear-gradient(#1d79c3, #fff);
+  background-image: linear-gradient(#120136, #fff);
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 90%;
@@ -89,9 +107,9 @@ body {
 
 header {
   position: fixed;
-  background-color: var(--main);
   height: 180px;
   top: 0px;
+  border-bottom: 6px ridge var(--accent);
 }
 
 .logo {
@@ -108,17 +126,17 @@ header {
 .logo-txt {
   position: absolute;
   font-weight: 900;
+  font-family: var(--ostrich-bold);
 }
 
 .current {
-  color: var(--accent);
   text-transform: uppercase;
   border-bottom: 2px solid var(--link);
   padding: 0px 5px;
 }
 
-.current:hover {
-  color: var(--alternate);
+footer .current {
+  color: var(--accent);
 }
 
 nav ul {
@@ -133,63 +151,6 @@ nav li {
   padding: 10px;
 }
 
-main {
-  margin: 220px 5% 20px 5%;
-  min-height: 100%;
-  line-height: 200%;
-}
-
-h1 {
-  text-align: center;
-  font-size: 3.5rem;
-  color: var(--accent);
-  text-transform: uppercase;
-}
-
-h2 {
-  font-size: 2.5rem;
-  padding-left: 50px;
-  color: var(--accent);
-  padding-top: 30px;
-}
-
-h3 {
-  font-size: 1.6rem;
-}
-
-.copy {
-  background-color: var(--main);
-  color: var(--contrast);
-  padding: 50px 10%;
-  margin: -50px 5%;
-}
-.copy ul {
-  list-style-type: none;
-}
-
-.copy img {
-  border: 2px solid var(--accent);
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(150px, auto);
-}
-
-.grid h1 {
-  grid-column: 1/3;
-  grid-row: 1;
-  text-align: center;
-}
-
 footer {
   position: static;
   display: flex;
@@ -198,7 +159,7 @@ footer {
   background-color: var(--contrast);
   color: var(--alternate);
   border-top: 6px ridge var(--accent);
-  text-align: center;
+  text-align: left;
   padding: 20px 0px 10px 0px;
   margin: 0px -8px;
 }
@@ -219,19 +180,96 @@ a {
 }
 
 a:hover {
-  color: var(--accent);
+  color: var(--contrast);
   text-transform: uppercase;
 }
 
 .logo-txt a {
-  color: var(--accent);
+  color: var(--colour);
 }
 
 .copy a {
-  border-bottom: 2px solid var(--navy);
+  border-bottom: 2px solid var(--link);
 }
 
-/******************** FORMS ********************/
+footer a {
+  color: var(--accent);
+}
+
+footer a:hover {
+  color: var(--main);
+}
+
+/******************** CONTENT ********************/
+
+main {
+  margin: 220px 5% 20px 5%;
+  min-height: 100%;
+  line-height: 200%;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  padding-left: 50px;
+  padding-top: 30px;
+}
+
+.copy {
+  color: var(--contrast);
+  padding: 50px 10%;
+  margin: -50px 5%;
+}
+.copy ul {
+  list-style-type: none;
+}
+
+.copy img {
+  border: 2px solid var(--accent);
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/******************** FLEX ********************/
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+
+.flex h1 {
+  text-align: center;
+  flex-grow: 1;
+  width: 100%;
+  line-height: 150%;
+}
+
+.flexbox-1 {
+  flex-grow: 1;
+  width: 50%;
+  padding: 5px;
+}
+
+.flexbox-2 {
+  flex-grow: 2;
+  width: 40%;
+  padding: 5px;
+}
+
+.flexbox.3 {
+  flex-grow: 3;
+  width: 100%;
+  padding: 5px;
+}
 
 /******************** INDEX ********************/
 
@@ -252,7 +290,7 @@ a:hover {
 
 .info-tile {
   color: var(--accent);
-  background-color: rgba(1, 1, 1, 0.7);
+  background-color: rgba(18, 1, 54, 0.7);
   font-size: 1.2rem;
   line-height: 1.5rem;
   text-align: center;
@@ -287,92 +325,7 @@ a:hover {
 
 /******************** VISIT US ********************/
 
-.visit-one {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.mapouter {
-  grid-column: 2;
-  grid-row: 2/4;
-}
-
-.visit-two {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.visit-three {
-  grid-column: 1;
-  grid-row: 4;
-}
-
-.visit-four {
-  grid-column: 2;
-  grid-row: 4;
-}
-
-.visit-img {
-  grid-column: 2;
-  grid-row: 5/7;
-}
-
-.visit-five {
-  grid-column: 1;
-  grid-row: 5;
-}
-
-.visit-six {
-  grid-column: 1;
-  grid-row: 6;
-}
-
 /******************** EXHIBITIONS ********************/
-
-.experience-one {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.experience-two {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.experience-three {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.experience-four {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-.experience-five {
-  grid-column: 1;
-  grid-row: 4;
-}
-
-.experience-six {
-  grid-column: 2;
-  grid-row: 4;
-}
-
-.experience-seven {
-  grid-column: 1;
-  grid-row: 5;
-}
-
-.experience-eight {
-  grid-column: 2;
-  grid-row: 5/7;
-}
-
-.experience-nine {
-  grid-column: 1;
-  grid-row: 6;
-}
 
 /******************** EVENTS ********************/
 
@@ -382,74 +335,9 @@ a:hover {
 
 /******************** EXPLORE ********************/
 
-.explore-one {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.explore-two {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.explore-three {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.explore-four {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-.explore-five {
-  grid-column: 1;
-  grid-row: 4;
-}
-
-.explore-six {
-  grid-column: 2;
-  grid-row: 4;
-}
-
 /******************** GET INVOLVED ********************/
 
-.involved-one {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.involved-two {
-  grid-column: 2;
-  grid-row: 2;
-}
-
 /******************** NEWS ********************/
-
-.news-one {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.grid-wide {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.news-two {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.news-three {
-  grid-column: 1;
-  grid-row: 4;
-}
-
-.grid-long {
-  grid-column: 2;
-  grid-row: 3/5;
-}
 
 /******************** ABOUT US ********************/
 
@@ -485,6 +373,18 @@ a:hover {
     margin-top: 70px;
     font-size: 1.1rem;
     margin-left: -20px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
   }
 
   .information-tiles {
@@ -538,6 +438,18 @@ a:hover {
     margin-left: -20px;
   }
 
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
   .information-tiles {
     display: block;
     margin: 0px 10%;
@@ -582,6 +494,18 @@ a:hover {
   nav {
     margin-top: 130px;
     font-size: 1.3rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
   }
 
   .information-tiles {
