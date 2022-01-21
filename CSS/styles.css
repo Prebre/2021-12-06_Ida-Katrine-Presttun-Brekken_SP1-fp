@@ -16,6 +16,11 @@
   src: url(../Fonts/fabrik.ttf);
 }
 
+@font-face {
+  font-family: "Ostrich Sans Black";
+  src: url(../Fonts/OstrichSans-Black.otf);
+}
+
 /**************************************** WEBSITE ****************************************/
 /******************** CSS VARIABLES ********************/
 
@@ -26,6 +31,7 @@
   --accent: #1d79c3;
   --link: #268500;
   --fabrik: "Fabrik", Verdana, sans-serif;
+  --ostrich-black: "Ostrich Sans Black", Verdana, sans-serif;
 }
 
 /******************** SHARED ATTRIBUTES ********************/
@@ -38,6 +44,20 @@ header,
 nav,
 footer {
   z-index: 1;
+}
+
+h1,
+h2,
+h3,
+header,
+footer {
+  font-family: var(--ostrich-black);
+}
+
+.copy,
+ul,
+.info-tile {
+  font-family: var(--fabrik);
 }
 
 .exhibition,
@@ -115,19 +135,19 @@ nav li {
 
 main {
   margin: 220px 5% 20px 5%;
-  font-size: 1.5rem;
   min-height: 100%;
+  line-height: 200%;
 }
 
 h1 {
   text-align: center;
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: var(--accent);
   text-transform: uppercase;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding-left: 50px;
   color: var(--accent);
   padding-top: 30px;
@@ -135,10 +155,6 @@ h2 {
 
 h3 {
   font-size: 1.6rem;
-}
-
-p {
-  font-family: var(--fabrik);
 }
 
 .copy {
@@ -200,7 +216,6 @@ a {
   color: var(--link);
   letter-spacing: 0.25rem;
   font-weight: 600;
-  font-family: var(--fabrik);
 }
 
 a:hover {
@@ -361,6 +376,10 @@ a:hover {
 
 /******************** EVENTS ********************/
 
+.events li {
+  padding-bottom: 40px;
+}
+
 /******************** EXPLORE ********************/
 
 .explore-one {
@@ -458,8 +477,8 @@ a:hover {
   }
 
   .logo-txt {
-    font-size: 1.3rem;
-    margin: 20px auto auto 80px;
+    font-size: 1.6rem;
+    margin: 25px auto auto 80px;
   }
 
   nav {
@@ -486,8 +505,14 @@ a:hover {
     width: 90%;
   }
 
+  .copy p,
+  .copy cite,
+  .copy ul {
+    font-size: 1.1rem;
+  }
+
   footer {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 
@@ -503,8 +528,8 @@ a:hover {
   }
 
   .logo-txt {
-    font-size: 1.5rem;
-    margin: 30px auto auto 100px;
+    font-size: 2rem;
+    margin: 35px auto auto 100px;
   }
 
   nav {
@@ -531,6 +556,12 @@ a:hover {
     width: 90%;
   }
 
+  .copy p,
+  .copy cite,
+  .copy ul {
+    font-size: 1.3rem;
+  }
+
   footer {
     font-size: 1.1rem;
   }
@@ -544,13 +575,13 @@ a:hover {
   }
 
   .logo-txt {
-    font-size: 1.7rem;
-    margin: 50px auto auto 130px;
+    font-size: 2.7rem;
+    margin: 35px auto auto 120px;
   }
 
   nav {
     margin-top: 130px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .information-tiles {
@@ -572,6 +603,12 @@ a:hover {
 
   .copy img {
     width: 500px;
+  }
+
+  .copy p,
+  .copy cite,
+  .copy ul {
+    font-size: 1.5rem;
   }
 
   footer {
