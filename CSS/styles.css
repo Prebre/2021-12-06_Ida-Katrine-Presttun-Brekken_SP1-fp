@@ -198,14 +198,11 @@ nav li {
 
 footer {
   position: static;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
   background-color: var(--contrast);
   color: var(--alternate);
   border-top: 6px ridge var(--accent);
   text-align: left;
-  padding: 20px 0px 10px 0px;
+  padding: 20px 100px 10px 100px;
   margin: 0px -8px;
 }
 
@@ -263,7 +260,7 @@ h2 {
 
 .copy {
   color: var(--contrast);
-  padding: 50px 10%;
+  padding: 50px 10% 110px 10%;
   margin: -50px 5%;
 }
 .copy ul {
@@ -292,26 +289,47 @@ h2 {
 .flex h1 {
   text-align: center;
   flex-grow: 1;
-  width: 100%;
+  flex-basis: 100%;
   line-height: 150%;
 }
 
 .flexbox-1 {
   flex-grow: 1;
-  width: 50%;
-  padding: 5px;
+  flex-basis: 50%;
+  padding: 0px 30px;
 }
 
 .flexbox-2 {
   flex-grow: 2;
-  width: 40%;
-  padding: 5px;
+  flex-basis: 40%;
+  padding: 0px 5px;
 }
 
 .flexbox.3 {
   flex-grow: 3;
-  width: 100%;
+  flex-basis: 100%;
   padding: 5px;
+}
+
+.flex-footer {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+
+.flexbox-f1 {
+  flex-grow: 1;
+  flex-basis: fill;
+  padding: 0px 10px;
+}
+
+.flexbox-f3 {
+  flex-grow: 3;
+  flex-basis: 100%;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 0.8rem;
 }
 
 /******************** INDEX ********************/
@@ -386,14 +404,6 @@ h2 {
 
 /******************** CONTACT US ********************/
 
-.contact {
-  text-align: center;
-}
-
-.contact h2 {
-  padding-left: 0px;
-}
-
 /**************************************** MEDIA QUERIES ****************************************/
 
 /******************** MOBILE MEDIA ********************/
@@ -439,7 +449,7 @@ h2 {
   }
 
   .copy img {
-    width: 90%;
+    width: 100%;
   }
 
   .copy p,
@@ -497,13 +507,17 @@ h2 {
   }
 
   .copy img {
-    width: 90%;
+    width: 100%;
   }
 
   .copy p,
   .copy cite,
   .copy ul {
     font-size: 1.3rem;
+  }
+
+  .flexbox-1 img {
+    max-width: 400px;
   }
 
   footer {
@@ -513,7 +527,7 @@ h2 {
 
 /******************** PC MEDIA ********************/
 
-@media only screen and (min-width: 1020px) {
+@media only screen and (min-width: 1160px) {
   header {
     height: 150px;
   }
@@ -563,7 +577,7 @@ h2 {
   }
 
   .copy img {
-    width: 500px;
+    width: 450px;
   }
 
   .copy p,
