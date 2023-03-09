@@ -1,6 +1,6 @@
 # Community Science Museum
 
-![image](Images\cms-index-500.png)
+![image](Images/cms-index-500.png)
 
 The purpose of this project is to showcase what I have learned about design, layout, HTML, CSS, and some JavaScript.
 
